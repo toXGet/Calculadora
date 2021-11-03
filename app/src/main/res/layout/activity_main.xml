@@ -1,80 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvTitulo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_horizontal"
-        android:text="Suma de Números"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvOperaciones"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="right"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="right"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvNumeroUno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="120dp"
-        android:textSize="20dp"
-        android:text="Número 1:" />
-
-    <EditText
-        android:id="@+id/etNumeroUno"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="160dp"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tvNumeroDos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="240dp"
-        android:textSize="20dp"
-        android:text="Número 2:" />
-
-    <EditText
-        android:id="@+id/etNumeroDos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="280dp"
-        android:inputType="number" />
-
-    <Button
-        android:id="@+id/btnResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:text="SUMAR"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginTop="380dp" />
-
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="460dp"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textSize="20dp" />
-
-</RelativeLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TableRow>
+            <Button
+                android:id="@+id/btnAc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="AC"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:id="@+id/btnC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="C"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnDividir"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="/"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/btnSiete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:id="@+id/btnOcho"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnNueve"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnMultiplicar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="*"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/btnCuatro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:id="@+id/btnCinco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnSeis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnRestar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/btnUno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:id="@+id/btnDos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnTres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnSumar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/btnPunto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="."
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                />
+            <Button
+                android:id="@+id/btnCero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:layout_marginHorizontal="10dp"
+                />
+            <Button
+                android:id="@+id/btnIgual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="="
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
