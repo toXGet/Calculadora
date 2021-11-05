@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,16 +64,31 @@ class MainActivity : AppCompatActivity() {
         fun constructorExp(cadena: String, oper: Boolean) {
             if (tvRes.text != ""){limpiar()}
             if (oper){
-                operador = cadena
-                chequeo = true
+                if (chequeo){
+                    Toast.makeText(this,
+                        "Lo sentimos. En el momento sólo se puede hacer una operación",
+                        Toast.LENGTH_SHORT).show()
+                }else{
+                    operador = cadena
+                    chequeo = true
+                    tvOps.append(cadena)
+                }
             }else{
                 if (!chequeo){
                     numUno += cadena
                 }else{
                     numDos += cadena
                 }
+                tvOps.append(cadena)
             }
-            tvOps.append(cadena)
+        }
+
+        fun division(): String {
+            if (numDos == "0"){
+                return "ERROR! No se puede dividir por 0"
+            }else{
+                return (numUno.toDouble() / numDos.toDouble()).toString()
+            }
         }
 
         fun calcular() {
@@ -80,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                 "+" -> tvRes.text = (numUno.toDouble() + numDos.toDouble()).toString()
                 "-" -> tvRes.text = (numUno.toDouble() - numDos.toDouble()).toString()
                 "*" -> tvRes.text = (numUno.toDouble() * numDos.toDouble()).toString()
-                "/" -> tvRes.text = (numUno.toDouble() / numDos.toDouble()).toString()
+                "/" -> tvRes.text = division()
                 else -> tvRes.text = "0"
             }
         }
